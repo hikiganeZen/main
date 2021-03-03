@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#SRC=config.h
+(cd build/$TARGET && sudo make && sudo make install)

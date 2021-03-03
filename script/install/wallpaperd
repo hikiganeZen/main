@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#SRC=src/wallpaper.c
+mkdir build/$TARGET/build
+(cd build/$TARGET/build && cmake .. && make && sudo make install)

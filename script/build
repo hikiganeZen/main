@@ -1,0 +1,60 @@
+#!/bin/sh
+
+mkdir build
+archive() {
+	for file in `ls -A $RUN_DIR/archive`; do
+		basename=`echo $file | cut -f1 -d'.'`
+		if [ "$basename" == "$TARGET" ]; then
+                	tar -xzvf $RUN_DIR/archive/$file -C build
+                	rm $RUN_DIR/archive/$file
+		fi
+	done
+}
+
+install() {
+	for install in `ls -A $RUN_DIR/script/install`; do
+        	if [ "$install" == "$TARGET" ]; then
+			if [ ! -z "$SRC" ]; then
+				nvim build/$TARGET/$SRC
+			fi
+                	$RUN_DIR/script/install/$install
+		        (cd build && tar -czvf $TARGET.tar.gz $TARGET)
+                        mv build/$TARGET.tar.gz $RUN_DIR/archive
+                fi
+        done
+}
+
+case $1 in
+	-e)	if [ ! -z "$2" ]; then			
+			export TARGET=$2
+			SRC=`cat $RUN_DIR/script/install/$TARGET | grep SRC | awk '{print $1}' | cut -f2 -d"="`
+			archive && install
+		else 
+			echo "Usage -e: No Argument!"
+		fi
+		break;;
+		
+	-a)	if [ ! -z "$2" ]; then			
+			export TARGET=$2
+			SRC=`cat $RUN_DIR/script/install/$TARGET | grep SRC | awk '{print $1}' | cut -f2 -d"="`
+			archive && nvim build/$TARGET/$SRC
+ 			(cd build && tar -czvf $TARGET.tar.gz $TARGET)
+                        mv build/$TARGET.tar.gz $RUN_DIR/archive
+		else 
+			echo "Usage -e: No Argument!"
+		fi
+		break;;
+		
+	$1) 	if [ ! -z "$1" ]; then
+			export TARGET=$1
+			archive && install
+		else
+			echo "Usage: No Argument!"
+		fi
+		break;;
+	
+	*)	echo "Usage: No Argument!"
+		break;;
+esac
+
+rm -rf build

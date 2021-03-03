@@ -1,0 +1,21 @@
+setup_manager.sh 
+	Back mechanism
+	Output Dialog
+	simplify code in it
+	All in command
+apk_bulk.sh
+	Edit frint function to work only if $line has content
+	Output Dialog
+	One line if statement
+
+build menu 
+	Edit frint function to work only if $line has content
+	Output Dialog
+	One line if statement
+
+all script with multiple parameters
+	include helper
+	error handler
+
+plan script to make
+	a script that create dialog script on runtime

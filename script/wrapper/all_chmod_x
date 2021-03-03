@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for file in `ls -p $1 | grep -v /`; do
+	if [ ! -x "$1/$file" ]; then
+		chmod +x $1/$file
+	fi
+done

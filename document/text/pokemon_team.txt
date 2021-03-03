@@ -1,0 +1,24 @@
+Pokemon Fire Red Team
+SPIKER/PHY TANK:	Shellder --> Cloyster(Water Stone @ 35)
+	Protect (29): PP10-16 POW— ACC—% PRIO+4
+	Spike (36): PP20-32 POW— ACC—%
+	Toxic (TM06): PP10-16 POW— ACC85%
+	Surf (HM03): PP15-24 POW95 ACC100% [STAB]
+
+SLEEPER/BLOWER:		Caterpie --> Metapod(7) --> Butterfree(10)
+	Sleep Powder (15): PP15-24 POW— ACC75% 
+	Whirlwind (23): PP20-32 POW— ACC—% PRIO-6
+	Flash (HM05): PP20-32 POW— ACC70%
+	Sunny day (TM11): PP5-8 POW— ACC—%
+
+DIGGER/SP-SWEEPER:	Diglett --> Dugtrio(26)
+	Dig(17): PP10-16 POW60 ACC100%
+	Protect (TM17): PP10-16 POW— ACC—% PRIO+4
+	Toxic (TM06): PP10-16 POW— ACC85%
+	Rock Smash(HM06): PP15-24 POW20 ACC100%  
+
+BEAM/PHY-SWEEPER	Oddish --> Gloom(23) --> Vileplume(Leaf Stone)
+	Bullet Seed
+	Sludge Bomb
+	Solarbeam
+

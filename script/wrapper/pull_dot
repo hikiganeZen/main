@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DOT_REPO=https://github.com/hikiganeZen/$1
+DOT_DEST=$2
+DOT_FOLDER=`basename $DOT_REPO`
+# read -p "Enter your github URL : " DOT_REPO
+
+git -C $DOT_DEST clone $DOT_REPO
+for file in `ls -A $DOT_DEST/$DOT_FOLDER`; do
+	cp -r $DOT_DEST/$DOT_FOLDER/$file $DOT_DEST
+done
+rm -rf $DOT_DEST/$DOT_FOLDER
